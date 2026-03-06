@@ -1,10 +1,10 @@
 # DevOps Trainee — Take-Home Assignment
 
-## Scenario
+## Overview
 
-You just joined as a DevOps trainee. Your senior engineer is on leave for 2 days. He left you a small project the team maintains, and **3 tickets** to finish before he's back.
+This is a small **URL shortener API** built with FastAPI, running behind NGINX, and using Redis for storage. Everything runs in Docker.
 
-The project is a simple **URL shortener API** built with FastAPI, running behind NGINX, and using Redis for storage. Everything runs in Docker.
+There are **3 tasks** below. Complete all of them and submit your repo.
 
 ---
 
@@ -31,11 +31,11 @@ The app should be accessible at `http://localhost:8080`
 
 ---
 
-## Your Tickets
+## Tasks
 
-### Ticket 1: Add a Health Check
+### Task 1: Add a Health Check
 
-The team needs a proper health check endpoint for monitoring.
+The project needs a proper health check endpoint for monitoring.
 
 **Requirements:**
 - Add a `GET /health` endpoint to the API
@@ -47,9 +47,9 @@ The team needs a proper health check endpoint for monitoring.
 
 ---
 
-### Ticket 2: Fix the Staging Environment
+### Task 2: Fix the Staging Environment
 
-The team runs this app in two environments: `dev` and `staging`. The dev environment works fine (you just tested it). Now the team needs to test in staging mode.
+This app runs in two environments: `dev` and `staging`. The dev environment works fine (you just tested it). Now you need to get staging working.
 
 To switch to staging:
 ```bash
@@ -64,7 +64,7 @@ There may be more than one issue. Make sure the app works correctly in staging m
 
 ---
 
-### Ticket 3: Investigate Last Night's Incident
+### Task 3: Investigate Last Night's Incident
 
 Users reported the API was slow last night between 2:00 AM and 2:45 AM. The app recovered on its own after that.
 

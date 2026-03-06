@@ -1,6 +1,6 @@
 # Solutions
 
-## Ticket 1: Health Check
+## Task 1: Health Check
 
 **What I found:**
 
@@ -10,7 +10,7 @@
 
 ---
 
-## Ticket 2: Fix Staging Environment
+## Task 2: Fix Staging Environment
 
 **What I found:**
 
@@ -20,7 +20,7 @@
 
 ---
 
-## Ticket 3: Incident Investigation
+## Task 3: Incident Investigation
 
 See `INCIDENT.md`
 
