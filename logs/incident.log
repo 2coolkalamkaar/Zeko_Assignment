@@ -1,0 +1,73 @@
+2026-03-05 01:45:12 INFO     Application started on port 8000
+2026-03-05 01:45:12 INFO     Redis connection established at redis:6379
+2026-03-05 01:45:13 INFO     Health check passed - Redis: reachable, Uptime: 14h 22m
+2026-03-05 01:50:01 INFO     POST /shorten 200 12ms
+2026-03-05 01:50:15 INFO     GET /aB3xKp 301 8ms
+2026-03-05 01:52:33 INFO     GET /stats/aB3xKp 200 6ms
+2026-03-05 01:55:00 INFO     Health check passed - Redis: reachable, Uptime: 14h 32m
+2026-03-05 01:58:22 INFO     POST /shorten 200 11ms
+2026-03-05 01:59:10 INFO     GET /Ym9wLz 301 7ms
+2026-03-05 02:00:01 INFO     Health check passed - Redis: reachable, Uptime: 14h 37m
+2026-03-05 02:01:44 INFO     POST /shorten 200 14ms
+2026-03-05 02:03:18 INFO     GET /aB3xKp 301 9ms
+2026-03-05 02:05:00 INFO     Health check passed - Redis: reachable, Uptime: 14h 42m
+2026-03-05 02:05:22 INFO     GET /stats/Ym9wLz 200 7ms
+2026-03-05 02:07:45 INFO     POST /shorten 200 13ms
+2026-03-05 02:08:30 INFO     GET /Kx8mNq 301 8ms
+2026-03-05 02:10:00 INFO     Health check passed - Redis: reachable, Uptime: 14h 47m
+2026-03-05 02:10:55 INFO     POST /shorten 200 15ms
+2026-03-05 02:12:02 INFO     GET /aB3xKp 301 9ms
+2026-03-05 02:13:18 WARNING  POST /shorten 200 87ms - response time elevated
+2026-03-05 02:13:45 WARNING  GET /Ym9wLz 301 92ms - response time elevated
+2026-03-05 02:14:10 WARNING  Redis command latency: 78ms (threshold: 50ms)
+2026-03-05 02:14:33 WARNING  POST /shorten 200 134ms - response time elevated
+2026-03-05 02:15:00 WARNING  Health check passed - Redis: reachable (slow), Uptime: 14h 52m
+2026-03-05 02:15:22 WARNING  Redis command latency: 112ms (threshold: 50ms)
+2026-03-05 02:15:48 WARNING  GET /stats/aB3xKp 200 145ms - response time elevated
+2026-03-05 02:16:05 WARNING  Redis BGSAVE in progress - performance may be degraded
+2026-03-05 02:16:18 ERROR    POST /shorten 200 523ms - response time critical
+2026-03-05 02:16:30 ERROR    Redis command latency: 489ms (threshold: 50ms)
+2026-03-05 02:16:45 ERROR    GET /Kx8mNq 301 612ms - response time critical
+2026-03-05 02:17:00 ERROR    Health check passed - Redis: reachable (degraded), Uptime: 14h 54m
+2026-03-05 02:17:10 ERROR    Redis command latency: 734ms (threshold: 50ms)
+2026-03-05 02:17:22 ERROR    POST /shorten 200 891ms - response time critical
+2026-03-05 02:17:35 ERROR    GET /aB3xKp 301 1203ms - response time critical
+2026-03-05 02:17:48 WARNING  Redis BGSAVE in progress - high disk I/O detected
+2026-03-05 02:18:01 ERROR    Redis command latency: 1547ms (threshold: 50ms)
+2026-03-05 02:18:15 ERROR    POST /shorten 504 2011ms - gateway timeout
+2026-03-05 02:18:22 ERROR    GET /Ym9wLz 504 2003ms - gateway timeout
+2026-03-05 02:18:30 ERROR    Redis command timeout after 2000ms
+2026-03-05 02:18:45 ERROR    POST /shorten 504 2008ms - gateway timeout
+2026-03-05 02:19:00 ERROR    Health check FAILED - Redis: timeout, Uptime: 14h 56m
+2026-03-05 02:19:10 ERROR    Redis command timeout after 2000ms
+2026-03-05 02:19:22 ERROR    GET /stats/Kx8mNq 504 2005ms - gateway timeout
+2026-03-05 02:19:35 ERROR    POST /shorten 504 2009ms - gateway timeout
+2026-03-05 02:19:48 ERROR    Redis command timeout after 2000ms
+2026-03-05 02:20:00 ERROR    Health check FAILED - Redis: timeout, Uptime: 14h 57m
+2026-03-05 02:20:15 ERROR    GET /aB3xKp 504 2004ms - gateway timeout
+2026-03-05 02:20:30 ERROR    Redis command timeout after 2000ms
+2026-03-05 02:20:45 ERROR    POST /shorten 504 2007ms - gateway timeout
+2026-03-05 02:21:00 ERROR    Health check FAILED - Redis: timeout, Uptime: 14h 58m
+2026-03-05 02:21:18 WARNING  Redis BGSAVE completed - disk I/O returning to normal
+2026-03-05 02:21:30 WARNING  Redis command latency: 834ms (threshold: 50ms)
+2026-03-05 02:21:45 WARNING  POST /shorten 200 756ms - response time critical
+2026-03-05 02:22:00 WARNING  Health check passed - Redis: reachable (degraded), Uptime: 14h 59m
+2026-03-05 02:22:15 WARNING  Redis command latency: 423ms (threshold: 50ms)
+2026-03-05 02:22:30 WARNING  GET /Kx8mNq 301 389ms - response time elevated
+2026-03-05 02:23:00 WARNING  Redis command latency: 198ms (threshold: 50ms)
+2026-03-05 02:23:15 WARNING  POST /shorten 200 167ms - response time elevated
+2026-03-05 02:24:00 WARNING  Redis command latency: 89ms (threshold: 50ms)
+2026-03-05 02:24:30 INFO     GET /aB3xKp 301 45ms
+2026-03-05 02:25:00 INFO     Health check passed - Redis: reachable, Uptime: 15h 02m
+2026-03-05 02:25:22 INFO     POST /shorten 200 14ms
+2026-03-05 02:26:10 INFO     GET /Ym9wLz 301 8ms
+2026-03-05 02:27:00 INFO     GET /stats/aB3xKp 200 7ms
+2026-03-05 02:30:00 INFO     Health check passed - Redis: reachable, Uptime: 15h 07m
+2026-03-05 02:33:18 INFO     POST /shorten 200 12ms
+2026-03-05 02:35:00 INFO     Health check passed - Redis: reachable, Uptime: 15h 12m
+2026-03-05 02:38:22 INFO     GET /Kx8mNq 301 9ms
+2026-03-05 02:40:00 INFO     Health check passed - Redis: reachable, Uptime: 15h 17m
+2026-03-05 02:42:15 INFO     POST /shorten 200 11ms
+2026-03-05 02:45:00 INFO     Health check passed - Redis: reachable, Uptime: 15h 22m
+2026-03-05 02:48:33 INFO     GET /aB3xKp 301 7ms
+2026-03-05 02:50:00 INFO     Health check passed - Redis: reachable, Uptime: 15h 27m
