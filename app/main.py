@@ -52,6 +52,29 @@ def get_stats(short_code: str):
     }
 
 
+@app.get("/health")
+def health_check():
+    uptime = time.time() - START_TIME
+    try:
+        # Check if Redis is reachable
+        r.ping()
+        redis_status = "reachable"
+    except redis.ConnectionError:
+        redis_status = "unreachable"
+
+    response = {
+        "status": "healthy" if redis_status == "reachable" else "unhealthy",
+        "uptime_seconds": round(uptime, 2),
+        "redis": redis_status
+    }
+
+    # Fail the health check with a 503 if Redis is unreachable
+    if redis_status == "unreachable":
+        raise HTTPException(status_code=503, detail=response)
+
+    return response
+
+
 @app.get("/{short_code}")
 def redirect_to_url(short_code: str):
     url = r.get(f"url:{short_code}")
