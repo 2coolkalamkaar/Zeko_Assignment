@@ -4,7 +4,7 @@ services:
       context: ./app
     environment:
       - REDIS_HOST=${REDIS_HOST:-redis}
-      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PORT=${REDIS_PORT:-6379} 
       - LOG_LEVEL=${LOG_LEVEL:-debug}
     depends_on:
       - redis
