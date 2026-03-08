@@ -3,25 +3,28 @@
 ## Task 1: Health Check
 
 **What I found:**
-The API was missing a health check endpoint, and Docker did not have a way to know if the FastAPI app and its Redis dependency were fully functional. The Python slim image also lacked `curl` for the Docker `healthcheck` command to use.
+
+API was missing a healthcheck endpoint and docker did not knew if redis and fastapi are running or not.  the python docker image also lacked curl command to check the health of the application.
 
 **What I did:**
-1. Added a `GET /health` endpoint to `app/main.py`. This endpoint pings Redis and returns the application uptime. It purposely raises a `HTTP 503` if Redis is unreachable.
+1. Added a `GET /health` endpoint to `app/main.py`. This endpoint pings Redis and returns the application uptime. It raises a `HTTP 503` if Redis is unreachable.
 2. Updated `app/Dockerfile` to install `curl` via `apt-get`.
-3. Updated `docker-compose.yml` by adding a Docker `healthcheck` property to the `api` service. The check runs `curl -f http://localhost:8000/health` so that an HTTP `503` results in an exit code `1`, accurately reflecting an unhealthy state if Redis is down.
+3. Updated `docker-compose.yml` by adding a Docker `healthcheck` property to the `api` service. The check runs `curl -f http://localhost:8000/health` so that an HTTP `503` results in an exit code `1`, so we can know if Redis is down.
 
 **Why:**
-We need health checks so that orchestrators like Docker/Kubernetes can safely restart sick containers or hold off routing traffic to them until they are fully booted and fully connected to crucial dependencies (like Redis).
-
+We need health checks so that orchestrators like Docker/Kubernetes can safely restart the containers if they are not running properly.
 ---
 
 ## Task 2: Fix Staging Environment
 
 **What I found:**
+When we ran docker compose --env-file .env.staging up, Docker injected REDIS_HOST=redis-staging into the API container. We had defined the service name as redis in docker-compose.yml. The FastAPI application throws the redis: unreachable flag because it is trying to connect to a host hostname named redis-staging, but it literally does not exist on the internal Docker DNS.
 
 **What I did:**
+I updated `.env.staging` to use `REDIS_HOST=redis` so it accurately targets the Redis container within the Docker network.
 
 **Why:**
+When Docker creates the network, it automatically assigns a DNS hostname to every container, and that hostname is exactly the service name defined in docker-compose.yml.
 
 ---
 
