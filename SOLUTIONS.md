@@ -38,6 +38,8 @@ See `INCIDENT.md`
 
 > If this project had to run in production serving real users, what are 3 things you'd change or add?
 
-1.
-2.
-3.
+1. **Adding a Database**: HAving Redis As a peimary Database is not good because we have seen in our application that it stores everything in memory and when it need to save to disk it performs BGSAVE and then the app degrades. SO we can use Mysql/ Postgress as our Databse to store all the data so the data writing operation is separated and also redis does not perform this. We can use Redis For caching so that if there is cache hit  it redirects instantly and if there is cache miss Redis Checks the Db and then perform the operation 
+
+2. **Rate Limiting** : We can also use Rate limiting as there might be vulnerable endpoints from which there may be many requests coming resulting in DDOs attaks which will degrade app performance. So we can impose Rate limits on the The IP's so they can only perform X requests in Y minutes.
+
+3. **Exposing Metrics ENdpoints** : We can also expose a metrics endpoint /metrics for our Fast api app  so we can set up monitoring using PRometheus and Grafana. We can also set up alerts on bais of metrics Like Error spikes, Request LAtency. ALso for Nginx we can use the stub_status Modules so we can monitor the Nginx performance too. This will help us to know Active connections, Reading/Writing/Waiting request states, and Total Handled Requests.
